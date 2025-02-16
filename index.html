@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Courier Routing using Travelling Salesman Problem</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa; /* Light blue background */
+            color: #333; /* Dark text for better readability */
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header {
+            background-color: #00796b; /* Teal background for header */
+            color: white; /* White text in header */
+            position: sticky; /* Keeps the header at the top */
+            top: 0; /* Aligns to the top */
+            z-index: 1000; /* Ensures the header is above other content */
+            display: flex; /* Use Flexbox for layout */
+            justify-content: space-between; /* Space between items */
+            align-items: center; /* Align items vertically centered */
+            font-size: 18px; /* Set a smaller font size */
+            padding: 10px 20px; /* Add some horizontal padding */
+        }
+
+        #left, #right,#center {
+            width: 50%;
+            padding: 10px;
+            color: white; /* Text color for header sections */
+        }
+
+        h1 {
+            color: #00796b; /* Teal color for the heading */
+            margin-top: 60px; /* Spacing from header */
+        }
+
+        label {
+            font-weight: bold;
+            margin: 10px 0;
+            display: block;
+        }
+
+        input[type="number"],
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #00796b; /* Teal border */
+            border-radius: 5px;
+            width: 200px; /* Set a width for input fields */
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="number"]:focus,
+        input[type="text"]:focus {
+            border-color: #004d40; /* Darker teal on focus */
+            outline: none; /* Remove default outline */
+        }
+
+        button {
+            background-color: #00796b; /* Teal button background */
+            color: white; /* White text on button */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #004d40; /* Darker teal on hover */
+        }
+
+        canvas {
+            border: 1px solid #00796b; /* Teal border around canvas */
+            display: block;
+            margin: auto;
+            background-color: #ffffff; /* White background for canvas */
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        footer {
+            background-color: #00796b; /* Teal background for footer */
+            color: white; /* White text in footer */
+            padding: 10px 0; /* Padding for footer */
+            font-size: 18px; /* Same font size for footer */
+            position: relative; /* Footer at the bottom of the page */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="left">S Subhashini 22BPS1070</div>
+	<div id="center">DA - 3 Mini Project in DAA</div>
+        <div id="right">Aiswarya Venkatesh 22BPS1038</div>
+    </header>
+    
+    <h1>Smart Courier Routing using Travelling Salesman Problem</h1>
+    <div>
+        <label for="numNodes">Number of Addresses to deliver, including the starting point location (N): </label>
+        <input type="number" id="numNodes" required>
+        
+        <label for="coordinates">Enter Coordinates for the delivery addresses, starting with your current location (e.g., 12,30 30,40): </label>
+        <input type="text" id="coordinates" required>
+        
+        <button onclick="submitCoordinates()">Submit</button>
+    </div>
+    <p id="result"></p>
+    <canvas id="myCanvas" width="800" height="600"></canvas>
+
+    <footer>
+        <p>S Subhashini 22BPS1070 | Smart Courier Routing using Travelling Salesman Problem | Aiswarya Venkatesh 22BPS1038</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
